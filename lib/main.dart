@@ -1,57 +1,42 @@
-import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  int counter = 1;
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Dynamic Apps'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Text(
-              counter.toString(),
-              style: TextStyle(
-                fontSize: 20 + double.parse(counter.toString()),
-                fontFamily: "Source Sans Pro",
-              ),
+          backgroundColor: Colors.green,
+          title: Text("MY APPBAR"),
+          centerTitle: true,
+          leading: CircleAvatar(
+            backgroundImage: AssetImage("images/logo.png"),
+          ),
+          actions: [
+            Container(
+              width: 35,
+              color: Colors.purple,
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      counter--;
-                    });
-                  },
-                  child: Icon(Icons.remove),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      counter++;
-                    });
-                  },
-                  child: Icon(Icons.add),
-                ),
-              ],
-            )
           ],
+          bottom: PreferredSize(
+            preferredSize: Size.fromHeight(200),
+            child: Container(
+              width: 35,
+              height: 200,
+              color: Colors.black,
+            ),
+          ),
+          flexibleSpace: Container(
+            width: 35,
+            height: 200,
+            color: Colors.amber,
+          ),
         ),
       ),
     );
