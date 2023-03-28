@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/cupertino.dart';
+import 'dart:io';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -16,7 +17,35 @@ class MyHomePage extends StatelessWidget {
             showDialog(
                 context: context,
                 builder: (context) {
-                  return AlertDialog();
+                  return Platform.isIOS
+                      ? CupertinoAlertDialog(
+                          title: Text("Delete Item"),
+                          content: Text("Are You Sure?"),
+                          actions: [
+                            TextButton(
+                              onPressed: () {},
+                              child: Text("No"),
+                            ),
+                            TextButton(
+                              onPressed: () {},
+                              child: Text("Yes"),
+                            ),
+                          ],
+                        )
+                      : AlertDialog(
+                          title: Text("Delete Item"),
+                          content: Text("Are You Sure?"),
+                          actions: [
+                            TextButton(
+                              onPressed: () {},
+                              child: Text("No"),
+                            ),
+                            TextButton(
+                              onPressed: () {},
+                              child: Text("Yes"),
+                            ),
+                          ],
+                        );
                 });
           },
           child: Text("Alert Dialog"),
