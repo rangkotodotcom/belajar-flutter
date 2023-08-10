@@ -9,7 +9,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cupertino"),
+        title: const Text("Cupertino"),
       ),
       body: Center(
         child: ElevatedButton(
@@ -19,36 +19,36 @@ class MyHomePage extends StatelessWidget {
                 builder: (context) {
                   return Platform.isIOS
                       ? CupertinoAlertDialog(
-                          title: Text("Delete Item"),
-                          content: Text("Are You Sure?"),
+                          title: const Text("Delete Item"),
+                          content: const Text("Are You Sure?"),
                           actions: [
                             TextButton(
                               onPressed: () {},
-                              child: Text("No"),
+                              child: const Text("No"),
                             ),
                             TextButton(
                               onPressed: () {},
-                              child: Text("Yes"),
+                              child: const Text("Yes"),
                             ),
                           ],
                         )
                       : AlertDialog(
-                          title: Text("Delete Item"),
-                          content: Text("Are You Sure?"),
+                          title: const Text("Delete Item"),
+                          content: const Text("Are You Sure?"),
                           actions: [
                             TextButton(
                               onPressed: () {},
-                              child: Text("No"),
+                              child: const Text("No"),
                             ),
                             TextButton(
                               onPressed: () {},
-                              child: Text("Yes"),
+                              child: const Text("Yes"),
                             ),
                           ],
                         );
                 });
           },
-          child: Text("Alert Dialog"),
+          child: const Text("Alert Dialog"),
         ),
       ),
     );

@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 
 class PhotoPage extends StatelessWidget {
   static const nameRoute = '/photopage';
+
+  const PhotoPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Photo Page"),
+        title: const Text("Photo Page"),
         // leading: Container(),
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           "PHOTO PAGE",
           style: TextStyle(

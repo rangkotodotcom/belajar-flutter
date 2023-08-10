@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.blueGrey,
         appBar: AppBar(
-          title: Text("My Apps"),
+          title: const Text("My Apps"),
         ),
-        body: Center(
+        body: const Center(
           child: Text(
             "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veniam dolore deleniti quae impedit nam quibusdam perspiciatis, eos suscipit laborum necessitatibus numquam sunt eius quasi illum, sapiente mollitia ipsam consectetur dignissimos. Asperiores magnam, debitis quidem quod natus, doloribus eaque qui modi veniam aliquid, aut dolor voluptatem. Recusandae excepturi quos quisquam corrupti, nobis, quidem dolores perspiciatis quam, totam nihil rem officiis fugit quasi illo provident deserunt ullam est at numquam iusto aperiam voluptates molestiae! Unde nesciunt atque temporibus quaerat amet, pariatur expedita sequi officia dicta perferendis maiores vitae minima asperiores aut eum non eligendi neque excepturi magnam et nemo fugiat harum ullam.",
             maxLines: 2,

@@ -7,10 +7,10 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dismissible"),
+        title: const Text("Dismissible"),
       ),
       body: ListView.builder(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         itemCount: 100,
         itemBuilder: (context, index) {
           return Dismissible(
@@ -20,20 +20,20 @@ class MyHomePage extends StatelessWidget {
                 context: context,
                 builder: (context) {
                   return AlertDialog(
-                    title: Text("Confirm"),
-                    content: Text("Yakin hapus item?"),
+                    title: const Text("Confirm"),
+                    content: const Text("Yakin hapus item?"),
                     actions: [
                       TextButton(
                         onPressed: () {
                           Navigator.of(context).pop(false);
                         },
-                        child: Text("Tidak"),
+                        child: const Text("Tidak"),
                       ),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.of(context).pop(true);
                         },
-                        child: Text("Ya"),
+                        child: const Text("Ya"),
                       ),
                     ],
                   );
@@ -44,12 +44,12 @@ class MyHomePage extends StatelessWidget {
             direction: DismissDirection.endToStart,
             background: Container(
               color: Colors.red,
-              child: Icon(
+              child: const Icon(
                 Icons.delete,
                 size: 25,
               ),
               alignment: Alignment.centerRight,
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                 right: 10,
               ),
             ),

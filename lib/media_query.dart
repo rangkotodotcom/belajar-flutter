@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MyHomePage(),
     );
@@ -15,12 +17,14 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     final mediaQueryHeight = MediaQuery.of(context).size.height;
     final mediaQueryWidth = MediaQuery.of(context).size.width;
     final myAppBar = AppBar(
-      title: Text("Media Query"),
+      title: const Text("Media Query"),
     );
 
     final bodyHeight = mediaQueryHeight -
@@ -46,7 +50,7 @@ class MyHomePage extends StatelessWidget {
                     color: Colors.red,
                     child: ListView.builder(
                       itemBuilder: ((context, index) {
-                        return ListTile(
+                        return const ListTile(
                           leading: CircleAvatar(),
                           title: Text("Halo"),
                         );
@@ -68,7 +72,7 @@ class MyHomePage extends StatelessWidget {
                     color: Colors.red,
                     child: ListView.builder(
                       itemBuilder: ((context, index) {
-                        return ListTile(
+                        return const ListTile(
                           leading: CircleAvatar(),
                           title: Text("Halo"),
                         );

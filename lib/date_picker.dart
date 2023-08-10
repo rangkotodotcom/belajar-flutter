@@ -13,7 +13,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Date Picker"),
+        title: const Text("Date Picker"),
       ),
       body: Center(
         child: Column(
@@ -21,12 +21,12 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Text(
               DateFormat.yMMMMEEEEd().format(selectDate),
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             OutlinedButton(
@@ -39,9 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   initialEntryMode: DatePickerEntryMode.calendarOnly,
                   initialDatePickerMode: DatePickerMode.day,
                   selectableDayPredicate: (day) {
-                    if ((day.isAfter(
-                            DateTime.now().subtract(Duration(days: 7)))) &&
-                        (day.isBefore(DateTime.now().add(Duration(days: 7))))) {
+                    if ((day.isAfter(DateTime.now()
+                            .subtract(const Duration(days: 7)))) &&
+                        (day.isBefore(
+                            DateTime.now().add(const Duration(days: 7))))) {
                       return true;
                     } else {
                       return false;
@@ -62,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   },
                 );
               },
-              child: Text(
+              child: const Text(
                 "Date Picker",
                 style: TextStyle(
                   color: Colors.black,

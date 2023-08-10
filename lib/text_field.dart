@@ -1,10 +1,14 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -12,6 +16,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   final TextEditingController myForm = TextEditingController();
 
+  // ignore: non_constant_identifier_names
   String Hasil = "Hasil Inputn";
 
   @override
@@ -19,7 +24,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Fitur TextField"),
+          title: const Text("Fitur TextField"),
         ),
         body: Center(
           child: Padding(
@@ -33,7 +38,7 @@ class _MyAppState extends State<MyApp> {
                   autocorrect: false,
                   autofocus: true,
                   keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     border: OutlineInputBorder(),
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(
@@ -75,7 +80,7 @@ class _MyAppState extends State<MyApp> {
                     print("EDIT");
                   },
                 ),
-                TextField(
+                const TextField(
                   autocorrect: true,
                   autofocus: false,
                   obscureText: true,

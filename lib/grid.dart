@@ -16,12 +16,14 @@ class MyApp extends StatelessWidget {
     );
   });
 
+  MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Grid View"),
+          title: const Text("Grid View"),
         ),
         // body: GridView(
         //   padding: EdgeInsets.all(10),
@@ -33,7 +35,7 @@ class MyApp extends StatelessWidget {
         //   children: myList,
         // ),
         body: GridView.count(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           crossAxisCount: 3,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,

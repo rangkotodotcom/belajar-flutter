@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
   State<MyApp> createState() => _MyAppState();
 }
@@ -17,7 +19,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Dynamic Apps'),
+          title: const Text('Dynamic Apps'),
         ),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -38,7 +40,7 @@ class _MyAppState extends State<MyApp> {
                       counter--;
                     });
                   },
-                  child: Icon(Icons.remove),
+                  child: const Icon(Icons.remove),
                 ),
                 ElevatedButton(
                   onPressed: () {
@@ -46,7 +48,7 @@ class _MyAppState extends State<MyApp> {
                       counter++;
                     });
                   },
-                  child: Icon(Icons.add),
+                  child: const Icon(Icons.add),
                 ),
               ],
             )

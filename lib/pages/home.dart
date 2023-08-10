@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
   final Faker faker = Faker();
+
+  HomePage({super.key});
   @override
   Widget build(BuildContext context) {
     List<Product> product = List.generate(100, (index) {
@@ -18,12 +20,12 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Market Place"),
+        title: const Text("Market Place"),
       ),
       body: GridView.builder(
-        padding: EdgeInsets.all(10),
+        padding: const EdgeInsets.all(10),
         itemCount: product.length,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
         itemBuilder: (context, index) {
           return GridTile(
@@ -33,7 +35,7 @@ class HomePage extends StatelessWidget {
               child: Column(children: [
                 Text(
                   product[index].judul,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),

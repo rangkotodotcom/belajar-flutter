@@ -7,7 +7,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Flexible adn Expanded"),
+        title: const Text("Flexible adn Expanded"),
       ),
       body: Row(
         children: [

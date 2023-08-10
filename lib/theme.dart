@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: const MyHomePage(),
       theme: ThemeData(
         brightness: Brightness.dark,
         // visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -27,13 +27,13 @@ class MyApp extends StatelessWidget {
         // ),
         // primaryColor: Colors.green,
         // colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.amber),
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyText2: TextStyle(
             color: Colors.amberAccent,
             fontFamily: 'Source Sans Pro',
           ),
         ),
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           color: Colors.green,
         ),
       ),
@@ -48,28 +48,28 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Theme Data"),
+        title: const Text("Theme Data"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               "This is a text",
               style: TextStyle(
                 fontSize: 35,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Text(
+            const Text(
               "This is a text",
               style: TextStyle(
                 fontSize: 35,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             ElevatedButton(
@@ -84,7 +84,7 @@ class MyHomePage extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(
+        child: const Icon(
           Icons.mediation,
         ),
       ),

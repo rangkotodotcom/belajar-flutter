@@ -6,8 +6,11 @@ void main() {
 }
 
 // ! Extract Widget
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget {
-  var faker = new Faker();
+  var faker = Faker();
+
+  MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

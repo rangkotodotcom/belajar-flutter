@@ -31,28 +31,30 @@ class MyApp extends StatelessWidget {
     }
   ];
 
+  MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("ID Apps"),
+          title: const Text("ID Apps"),
         ),
         body: ListView(
           children: myList.map((data) {
             List favColor = data['favColor'];
             return Card(
-              margin: EdgeInsets.all(10),
+              margin: const EdgeInsets.all(10),
               color: Colors.black12,
               child: Container(
-                margin: EdgeInsets.all(10),
+                margin: const EdgeInsets.all(10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
-                        CircleAvatar(),
-                        SizedBox(
+                        const CircleAvatar(),
+                        const SizedBox(
                           width: 20,
                         ),
                         Column(
@@ -71,11 +73,11 @@ class MyApp extends StatelessWidget {
                         children: favColor.map((color) {
                           return Container(
                             color: Colors.amber,
-                            margin: EdgeInsets.symmetric(
+                            margin: const EdgeInsets.symmetric(
                               vertical: 15,
                               horizontal: 8,
                             ),
-                            padding: EdgeInsets.all(10),
+                            padding: const EdgeInsets.all(10),
                             child: Text(color),
                           );
                         }).toList(),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 // ! Widget Listtile
@@ -12,23 +12,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("List Tile"),
+          title: const Text("List Tile"),
         ),
         body: ListView(
           children: [
             ListTile(
-              contentPadding: EdgeInsets.all(10),
-              title: Text("Jamilur"),
-              subtitle: Text("online"),
-              leading: CircleAvatar(),
-              trailing: Text("10:00 PM"),
+              contentPadding: const EdgeInsets.all(10),
+              title: const Text("Jamilur"),
+              subtitle: const Text("online"),
+              leading: const CircleAvatar(),
+              trailing: const Text("10:00 PM"),
               // tileColor: Colors.amber,
               dense: true,
               onTap: () {
                 return;
               },
             ),
-            Divider(
+            const Divider(
               color: Colors.black,
             ),
           ],

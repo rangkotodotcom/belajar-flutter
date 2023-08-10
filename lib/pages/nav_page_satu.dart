@@ -2,13 +2,15 @@ import 'package:belajar_flutter/pages/nav_page_dua.dart';
 import 'package:flutter/material.dart';
 
 class PageSatu extends StatelessWidget {
+  const PageSatu({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Page Satu"),
+        title: const Text("Page Satu"),
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           "Ini Page Satu",
           style: TextStyle(
@@ -21,12 +23,12 @@ class PageSatu extends StatelessWidget {
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
-                return PageDua();
+                return const PageDua();
               },
             ),
           );
         },
-        child: Icon(Icons.keyboard_arrow_right),
+        child: const Icon(Icons.keyboard_arrow_right),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

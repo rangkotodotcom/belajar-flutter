@@ -3,18 +3,20 @@ import 'package:flutter/material.dart';
 
 class GalleryPage extends StatelessWidget {
   static const nameRoute = '/gallerypage';
+
+  const GalleryPage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Gallery Page"),
+        title: const Text("Gallery Page"),
         // leading: Container(),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text(
+            const Text(
               "GALLERY PAGE",
               style: TextStyle(
                 fontSize: 50,
@@ -27,7 +29,7 @@ class GalleryPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: Text(
+                  child: const Text(
                     'Back',
                     style: TextStyle(
                       fontSize: 25,
@@ -38,7 +40,7 @@ class GalleryPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).pushNamed(PhotoPage.nameRoute);
                   },
-                  child: Text(
+                  child: const Text(
                     'Next',
                     style: TextStyle(
                       fontSize: 25,

@@ -11,12 +11,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Date Format"),
+          title: const Text("Date Format"),
         ),
         body: Center(
           child: Text(
             DateFormat.yMMMMEEEEd().format(DateTime.now()),
-            style: TextStyle(
+            style: const TextStyle(
               fontSize: 30,
               fontFamily: "Source Sans Pro",
             ),

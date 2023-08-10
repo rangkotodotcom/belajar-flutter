@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -13,9 +13,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.green,
-          title: Text("MY APPBAR"),
+          title: const Text("MY APPBAR"),
           centerTitle: true,
-          leading: CircleAvatar(
+          leading: const CircleAvatar(
             backgroundImage: AssetImage("images/logo.png"),
           ),
           actions: [
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
             ),
           ],
           bottom: PreferredSize(
-            preferredSize: Size.fromHeight(200),
+            preferredSize: const Size.fromHeight(200),
             child: Container(
               width: 35,
               height: 200,

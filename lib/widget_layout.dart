@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 // ! Widget Layout ada Column, Row dan Stack
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Column"),
+          title: const Text("Column"),
         ),
         body: Stack(
           // mainAxisAlignment: MainAxisAlignment.center, // for column and row

@@ -12,12 +12,12 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dialog"),
+        title: const Text("Dialog"),
       ),
       body: Center(
         child: Text(
           data,
-          style: TextStyle(
+          style: const TextStyle(
             fontSize: 40,
           ),
         ),
@@ -28,20 +28,20 @@ class _MyHomePageState extends State<MyHomePage> {
               context: context,
               builder: (context) {
                 return AlertDialog(
-                  title: Text("Confirm"),
-                  content: Text("Yakin hapus item?"),
+                  title: const Text("Confirm"),
+                  content: const Text("Yakin hapus item?"),
                   actions: [
                     TextButton(
                       onPressed: () {
                         Navigator.of(context).pop(false);
                       },
-                      child: Text("Tidak"),
+                      child: const Text("Tidak"),
                     ),
                     ElevatedButton(
                       onPressed: () {
                         Navigator.of(context).pop(true);
                       },
-                      child: Text("Ya"),
+                      child: const Text("Ya"),
                     ),
                   ],
                 );
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
             });
           });
         },
-        child: Icon(Icons.delete),
+        child: const Icon(Icons.delete),
       ),
     );
   }

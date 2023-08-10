@@ -2,7 +2,7 @@ import 'package:belajar_flutter/pages/nav_page_satu.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {

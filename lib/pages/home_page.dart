@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
   static const nameRoute = '/homepage';
+
+  const MyHomePage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page"),
+        title: const Text("Home Page"),
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           "HOME PAGE",
           style: TextStyle(
@@ -21,7 +23,7 @@ class MyHomePage extends StatelessWidget {
         onPressed: () {
           Navigator.of(context).pushNamed(GalleryPage.nameRoute);
         },
-        child: Icon(Icons.arrow_right_alt),
+        child: const Icon(Icons.arrow_right_alt),
       ),
     );
   }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});
@@ -11,7 +10,7 @@ class MyHomePage extends StatelessWidget {
     final paddingTop = MediaQuery.of(context).padding.top;
 
     final myAppBar = AppBar(
-      title: Text("Layout Builder"),
+      title: const Text("Layout Builder"),
     );
 
     final heightBody = heightApp - paddingTop - myAppBar.preferredSize.height;
@@ -38,7 +37,8 @@ class MyHomePage extends StatelessWidget {
 class MyContainer extends StatelessWidget {
   final double widthApp;
 
-  MyContainer(this.widthApp);
+  // ignore: prefer_const_constructors_in_immutables
+  MyContainer(this.widthApp, {super.key});
 
   @override
   Widget build(BuildContext context) {
