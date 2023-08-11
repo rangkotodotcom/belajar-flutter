@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-import '../models/product2.dart';
+import './product2.dart';
 
 class Products with ChangeNotifier {
   final List<Product> _allproducts = List.generate(
@@ -18,7 +18,7 @@ class Products with ChangeNotifier {
   );
 
   List<Product> get allproducts {
-    return [..._allproducts];
+    return _allproducts;
   }
 
   Product findById(productId) {
