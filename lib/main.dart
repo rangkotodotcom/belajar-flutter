@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'http_post.dart';
+import 'http_get.dart';
 
 void main() {
   runApp(const MyApp());

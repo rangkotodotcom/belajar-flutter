@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'models/httppost_provider.dart';
+import './models/httpget_provider.dart';
 
 // import './pages/home_stateful.dart';
-import 'pages/homepost_provider.dart';
+import './pages/homeget_provider.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({super.key});

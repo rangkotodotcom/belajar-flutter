@@ -1,6 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:belajar_flutter/models/http_stateful.dart';
+import 'package:belajar_flutter/models/httppost_stateful.dart';
 import 'package:flutter/material.dart';
 
 class HomeStateful extends StatefulWidget {

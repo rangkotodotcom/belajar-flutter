@@ -1,5 +1,7 @@
-import 'package:belajar_flutter/models/http_provider.dart';
+import 'dart:math';
+
 import 'package:flutter/material.dart';
+import 'package:belajar_flutter/models/httpget_provider.dart';
 import 'package:provider/provider.dart';
 
 class HomeProvider extends StatelessWidget {
@@ -10,7 +12,7 @@ class HomeProvider extends StatelessWidget {
     final dataProvider = Provider.of<HttpProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
-        title: const Text("POST - PROVIDER"),
+        title: const Text("GET - PROVIDER"),
       ),
       body: Container(
         width: double.infinity,
@@ -18,6 +20,22 @@ class HomeProvider extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Container(
+                height: 100,
+                width: 100,
+                child: Consumer<HttpProvider>(
+                  builder: (context, value, child) => Image.network(
+                    (value.data["avatar"] == null)
+                        ? "https://img.freepik.com/free-icon/user_318-563642.jpg"
+                        : value.data["avatar"],
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
             FittedBox(
               child: Consumer<HttpProvider>(
                 builder: (context, value, child) => Text(
@@ -34,35 +52,25 @@ class HomeProvider extends StatelessWidget {
             FittedBox(
               child: Consumer<HttpProvider>(
                 builder: (context, value, child) => Text(
-                  (value.data["name"] == null)
+                  (value.data["first_name"] == null ||
+                          value.data["last_name"] == null)
                       ? "Belum ada data"
-                      : value.data["name "],
+                      : value.data["first_name"] +
+                          " " +
+                          value.data["last_name"],
                   style: const TextStyle(fontSize: 20),
                 ),
               ),
             ),
             const SizedBox(height: 20),
             const FittedBox(
-                child: Text("Job : ", style: TextStyle(fontSize: 20))),
+                child: Text("Email : ", style: TextStyle(fontSize: 20))),
             FittedBox(
               child: Consumer<HttpProvider>(
                 builder: (context, value, child) => Text(
-                  (value.data["job"] == null)
+                  (value.data["email"] == null)
                       ? "Belum ada data"
-                      : value.data["job"],
-                  style: const TextStyle(fontSize: 20),
-                ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            const FittedBox(
-                child: Text("Created At : ", style: TextStyle(fontSize: 20))),
-            FittedBox(
-              child: Consumer<HttpProvider>(
-                builder: (context, value, child) => Text(
-                  (value.data["createdAt"] == null)
-                      ? "Belum ada data"
-                      : value.data["createdAt"],
+                      : value.data["email"],
                   style: const TextStyle(fontSize: 20),
                 ),
               ),
@@ -70,10 +78,10 @@ class HomeProvider extends StatelessWidget {
             const SizedBox(height: 100),
             OutlinedButton(
               onPressed: () {
-                dataProvider.connectAPI("Samsudin", "Swasta");
+                dataProvider.connectAPI((1 + Random().nextInt(10)).toString());
               },
               child: const Text(
-                "POST DATA",
+                "GET DATA",
                 style: TextStyle(
                   fontSize: 25,
                 ),
