@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   trailing: IconButton(
                     onPressed: () {
-                      allPlayerProvider.deletePlayer(id).then((value) {
+                      allPlayerProvider.deletePlayer(id).then((_) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Row(

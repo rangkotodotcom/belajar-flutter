@@ -21,7 +21,7 @@ class Players with ChangeNotifier {
     DateTime datetimeNow = DateTime.now();
 
     Uri url = Uri.parse(
-        "https://belajar-flutter-a2003-default-rtdb.asia-southeast1.firebasedatabase.app/player.json");
+        "https://belajar-flutter-a2003-default-rtdb.asia-southeast1.firebasedatabase.app/players.json");
 
     try {
       final response = await http.post(
@@ -90,14 +90,12 @@ class Players with ChangeNotifier {
         "https://belajar-flutter-a2003-default-rtdb.asia-southeast1.firebasedatabase.app/players/$id.json");
 
     try {
-      final response = await http.delete(url).then(
-        (response) {
-          _allPlayer.removeWhere((element) => element.id == id);
-          notifyListeners();
-        },
-      );
+      final response = await http.delete(url);
 
-      if (response.statusCode < 200 && response.statusCode >= 300) {
+      if (response.statusCode >= 200 && response.statusCode < 300) {
+        _allPlayer.removeWhere((element) => element.id == id);
+        notifyListeners();
+      } else {
         throw ("${response.statusCode}");
       }
     } catch (error) {
@@ -111,9 +109,10 @@ class Players with ChangeNotifier {
 
     var hasilGetData = await http.get(url);
 
-    var dataResponse = json.decode(hasilGetData.body) as Map<String, dynamic>;
+    var dataResponse = json.decode(hasilGetData.body);
 
     if (dataResponse != null) {
+      dataResponse as Map<String, dynamic>;
       dataResponse.forEach((key, value) {
         DateTime dateTimeParse =
             DateFormat("yyyy-mm-dd hh:mm:ss").parse(value["createdAt"]);
