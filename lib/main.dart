@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'auth.dart';
+import 'shared_preferences.dart';
 
 void main() {
   runApp(const MyApp());
