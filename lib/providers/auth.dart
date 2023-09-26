@@ -3,6 +3,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthB with ChangeNotifier {
   Timer? _authTimer;
@@ -12,10 +13,20 @@ class AuthB with ChangeNotifier {
   String? _tempidToken, tempuserId;
   DateTime? _tempexpiryDate;
 
-  void tempData() {
+  Future<void> tempData() async {
     _idToken = _tempidToken;
     userId = tempuserId;
     _expiryDate = _tempexpiryDate;
+
+    final sharedPref = await SharedPreferences.getInstance();
+
+    final mapShared = jsonEncode({
+      '_token': _tempidToken,
+      '_userId': tempuserId,
+      '_expiryDate': _tempexpiryDate!.toIso8601String()
+    });
+
+    sharedPref.setString('authData', mapShared);
 
     notifyListeners();
   }
@@ -61,7 +72,6 @@ class AuthB with ChangeNotifier {
       _tempexpiryDate = DateTime.now()
           .add(Duration(seconds: int.parse(responseData['expiresIn'])));
       _autoLogout(int.parse(responseData['expiresIn']) - 60);
-      notifyListeners();
     } catch (error) {
       rethrow;
     }
@@ -94,13 +104,12 @@ class AuthB with ChangeNotifier {
       _tempexpiryDate = DateTime.now()
           .add(Duration(seconds: int.parse(responseData['expiresIn'])));
       _autoLogout(int.parse(responseData['expiresIn']) - 60);
-      notifyListeners();
     } catch (error) {
       rethrow;
     }
   }
 
-  void logout() {
+  Future<void> logout() async {
     _idToken = null;
     userId = null;
     _expiryDate = null;
@@ -109,6 +118,9 @@ class AuthB with ChangeNotifier {
       _authTimer!.cancel();
       _authTimer = null;
     }
+
+    final pref = await SharedPreferences.getInstance();
+    pref.clear();
 
     notifyListeners();
   }
@@ -119,5 +131,31 @@ class AuthB with ChangeNotifier {
     }
 
     _authTimer = Timer(Duration(seconds: timer), logout);
+  }
+
+  Future<bool> autoLogin() async {
+    final pref = await SharedPreferences.getInstance();
+
+    if (!pref.containsKey('authData')) {
+      return false;
+    }
+
+    final authData =
+        jsonDecode(pref.get('authData').toString()) as Map<String, dynamic>;
+
+    final myExpiredDate = DateTime.parse(authData["_expiryDate"]);
+    final myTokenData = authData["_token"];
+    final myUserId = authData["_userId"];
+
+    if (myExpiredDate.isBefore(DateTime.now())) {
+      return false;
+    }
+
+    _idToken = myTokenData;
+    userId = myUserId;
+    _expiryDate = myExpiredDate;
+    notifyListeners();
+
+    return true;
   }
 }
