@@ -16,13 +16,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Extract Widget'),
+          title: const Text('Extract Widget'),
         ),
         body: ListView.builder(
           itemCount: 100,
           itemBuilder: (context, index) {
             return ChatItem(
-              imageUrl: "https://picsum.photos/id/${index}/200/300",
+              imageUrl: "https://picsum.photos/id/$index/200/300",
               title: faker.person.name(),
               subtitle: faker.lorem.sentence(),
             );
@@ -40,7 +40,7 @@ class ChatItem extends StatelessWidget {
 
   // ChatItem({this.imageUrl, this.title, this.subtitle});
 
-  ChatItem(
+  const ChatItem(
       {Key? key,
       required this.imageUrl,
       required this.title,
@@ -50,13 +50,13 @@ class ChatItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: EdgeInsets.all(10),
+      contentPadding: const EdgeInsets.all(10),
       leading: CircleAvatar(
         backgroundImage: NetworkImage(imageUrl),
       ),
       title: Text(title),
       subtitle: Text(subtitle),
-      trailing: Text("10:00 PM"),
+      trailing: const Text("10:00 PM"),
     );
   }
 }

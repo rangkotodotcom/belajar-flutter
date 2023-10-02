@@ -87,16 +87,16 @@ class AddProductPage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () =>
                     save(titleController.text, priceController.text),
-                child: const Text(
-                  "Save",
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
-                ),
                 style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(vertical: 15),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100),
+                  ),
+                ),
+                child: const Text(
+                  "Save",
+                  style: TextStyle(
+                    fontSize: 18,
                   ),
                 ),
               ),

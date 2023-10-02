@@ -33,7 +33,7 @@ class _MyHomeState extends State<MyHome> {
       body: Center(
         child: Column(
           children: [
-            Container(
+            SizedBox(
               width: 200,
               child: Switch(
                   activeColor: Colors.amber,

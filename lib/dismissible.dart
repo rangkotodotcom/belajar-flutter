@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
   final faker = Faker();
+
+  MyHomePage({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,13 +46,13 @@ class MyHomePage extends StatelessWidget {
             direction: DismissDirection.endToStart,
             background: Container(
               color: Colors.red,
-              child: const Icon(
-                Icons.delete,
-                size: 25,
-              ),
               alignment: Alignment.centerRight,
               padding: const EdgeInsets.only(
                 right: 10,
+              ),
+              child: const Icon(
+                Icons.delete,
+                size: 25,
               ),
             ),
             child: ListTile(

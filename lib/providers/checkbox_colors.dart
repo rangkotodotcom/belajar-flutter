@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import './checkbox_color.dart';
 
 class MultiColor with ChangeNotifier {
-  List<SingleColor> _colors = [];
+  final List<SingleColor> _colors = [];
 
   List<SingleColor> get colors => _colors;
 
@@ -33,19 +33,19 @@ class MultiColor with ChangeNotifier {
         throw (hasil.statusCode);
       }
     } catch (err) {
-      throw (err);
+      rethrow;
     }
   }
 
   void selectAll(bool nilai) {
     if (nilai) {
-      _colors.forEach((element) {
+      for (var element in _colors) {
         element.status = true;
-      });
+      }
     } else {
-      _colors.forEach((element) {
+      for (var element in _colors) {
         element.status = false;
-      });
+      }
     }
     notifyListeners();
   }
@@ -79,7 +79,7 @@ class MultiColor with ChangeNotifier {
         throw (hasil.statusCode);
       }
     } catch (err) {
-      throw (err);
+      rethrow;
     }
   }
 
@@ -96,7 +96,7 @@ class MultiColor with ChangeNotifier {
         throw (hasil.statusCode);
       }
     } catch (err) {
-      throw (err);
+      rethrow;
     }
   }
 }

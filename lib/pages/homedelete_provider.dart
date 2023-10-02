@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(50),
-              child: Container(
+              child: SizedBox(
                 height: 100,
                 width: 100,
                 child: Consumer<HttpProvider>(

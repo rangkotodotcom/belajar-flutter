@@ -29,7 +29,6 @@ class HomePage extends StatelessWidget {
             crossAxisCount: 2, mainAxisSpacing: 10, crossAxisSpacing: 10),
         itemBuilder: (context, index) {
           return GridTile(
-            child: Image.network(product[index].ImageUrl),
             footer: Container(
               color: Colors.green,
               child: Column(children: [
@@ -44,6 +43,7 @@ class HomePage extends StatelessWidget {
                 Text("Rp. ${product[index].harga.toString()}"),
               ]),
             ),
+            child: Image.network(product[index].ImageUrl),
           );
         },
       ),

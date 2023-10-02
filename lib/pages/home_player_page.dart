@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: (allPlayerProvider.jumlahPlayer == 0)
-          ? Container(
+          ? SizedBox(
               width: double.infinity,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -92,14 +92,14 @@ class _HomePageState extends State<HomePage> {
 
                   leading: ClipRRect(
                     borderRadius: BorderRadius.circular(50),
-                    child: Container(
+                    child: SizedBox(
                       width: 50,
                       height: 50,
                       child: CachedNetworkImage(
                         imageUrl: allPlayerProvider.allPlayer[index].imageUrl,
                         placeholder: (context, url) =>
                             const CircularProgressIndicator(),
-                        errorWidget: (context, url, error) => Container(
+                        errorWidget: (context, url, error) => SizedBox(
                           height: 50,
                           width: 50,
                           child: Image.network(
@@ -152,7 +152,6 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       );
-                      ;
                     },
                     icon: const Icon(Icons.delete),
                   ),

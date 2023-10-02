@@ -35,7 +35,7 @@ class MyHomePageSatu extends StatelessWidget {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
                     builder: (context) {
-                      return MyHomePageSatu();
+                      return const MyHomePageSatu();
                     },
                   ),
                 );
@@ -56,7 +56,7 @@ class MyHomePageSatu extends StatelessWidget {
                 Navigator.of(context).pushReplacement(
                   MaterialPageRoute(
                     builder: (context) {
-                      return SettingsPage();
+                      return const SettingsPage();
                     },
                   ),
                 );

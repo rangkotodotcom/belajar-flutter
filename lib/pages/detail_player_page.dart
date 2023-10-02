@@ -31,7 +31,7 @@ class DetailPlayer extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(150),
-                child: Container(
+                child: SizedBox(
                   width: 150,
                   height: 150,
                   child: CachedNetworkImage(
@@ -39,7 +39,7 @@ class DetailPlayer extends StatelessWidget {
                     imageUrl: imageController.text,
                     placeholder: (context, url) =>
                         const CircularProgressIndicator(),
-                    errorWidget: (context, url, error) => Container(
+                    errorWidget: (context, url, error) => SizedBox(
                       height: 50,
                       width: 50,
                       child: Image.network(
@@ -143,7 +143,6 @@ class DetailPlayer extends StatelessWidget {
                         ),
                       ),
                     );
-                    ;
                   },
                   child: const Text(
                     "Edit",

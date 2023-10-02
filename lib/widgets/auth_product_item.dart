@@ -10,7 +10,7 @@ class ProductItem extends StatelessWidget {
 
   final DateTime updatedAt;
 
-  ProductItem(this.id, this.title, this.price, this.updatedAt);
+  const ProductItem(this.id, this.title, this.price, this.updatedAt, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +28,10 @@ class ProductItem extends StatelessWidget {
           ),
         ),
       ),
-      title: Text("$title"),
+      title: Text(title),
       subtitle: Text("Last Edited : $date"),
       trailing: IconButton(
-        icon: Icon(Icons.delete),
+        icon: const Icon(Icons.delete),
         onPressed: () {
           prov.deleteProduct(id);
         },
