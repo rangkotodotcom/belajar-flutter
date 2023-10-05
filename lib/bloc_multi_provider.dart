@@ -16,7 +16,17 @@ class MyHomepage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            BlocBuilder<CounterBloc, int>(
+            BlocConsumer<CounterBloc, int>(
+              listener: (context, state) {
+                if (state > 10) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text('Melebihi 10'),
+                      duration: Duration(microseconds: 100),
+                    ),
+                  );
+                }
+              },
               builder: (context, state) => Text(
                 "Angka saat ini : $state",
                 style: const TextStyle(fontSize: 23),
