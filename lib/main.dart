@@ -19,7 +19,7 @@ void main() {
 //   }
 // }
 
-// For Bloc Provider
+// For Bloc Provider or Cubit
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
-        create: (context) => CounterBloc(),
+        create: (context) => CounterCubit(),
         child: const MyHomepage(),
       ),
     );
