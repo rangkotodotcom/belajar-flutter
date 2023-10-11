@@ -11,6 +11,9 @@ class MyHomepage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Counter App"),
+        // automaticallyImplyLeading: false,
+        forceMaterialTransparency: true,
+        iconTheme: const IconThemeData(color: Colors.black),
       ),
       body: Center(
         child: Column(
